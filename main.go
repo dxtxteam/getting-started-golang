@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -24,6 +25,7 @@ func defaultHandler(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
+	fmt.Println("bjh test")
 	http.HandleFunc("/", defaultHandler)
 	http.HandleFunc("/cities.json", cityHandler)
 	err := http.ListenAndServe(":5000", nil)
